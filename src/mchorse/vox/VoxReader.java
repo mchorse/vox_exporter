@@ -74,8 +74,9 @@ public class VoxReader
                     while (voxels > 0)
                     {
                         stream.read(this.buf);
+                        int index = vox.toIndex(this.buf[0], this.buf[2], vox.z - this.buf[1] - 1);
 
-                        vox.voxels[vox.toIndex(this.buf[0], this.buf[2], vox.z - this.buf[1])] = this.buf[3] & 0xff;
+                        vox.voxels[index] = this.buf[3] & 0xff;
                         voxels--;
                     }
                 }
