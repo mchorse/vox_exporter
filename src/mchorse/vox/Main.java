@@ -80,11 +80,14 @@ public class Main
 
     private static void savePalette(Vox vox, File file) throws Exception
     {
-        BufferedImage image = new BufferedImage(256, 1, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage image = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
 
         for (int i = 1; i < 256; i++)
         {
-            image.setRGB(i - 1, 0, vox.palette[i]);
+            int x = i % 16;
+            int y = i / 16;
+
+            image.setRGB(x, y, vox.palette[i]);
         }
 
         String name = file.getName();

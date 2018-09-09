@@ -40,7 +40,9 @@ public class OBJBuilder
 
         for (Integer in : this.palette)
         {
-            this.content += "vt " + ((in - 1 + 0.5F) / 256) + " 0.5\n";
+            int i = in - 1;
+
+            this.content += "vt " + (((i % 16) + 0.5F) / 16) + " " + (((i / 16) + 0.5F) / 16) + "\n";
         }
 
         this.content += "\n";
