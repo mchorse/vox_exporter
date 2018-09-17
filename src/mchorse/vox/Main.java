@@ -82,12 +82,12 @@ public class Main
     {
         BufferedImage image = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
 
-        for (int i = 1; i < 256; i++)
+        for (int i = 0; i < 255; i++)
         {
             int x = i % 16;
             int y = i / 16;
 
-            image.setRGB(x, y, vox.palette[i]);
+            image.setRGB(x, y, vox.palette[i + 1]);
         }
 
         String name = file.getName();

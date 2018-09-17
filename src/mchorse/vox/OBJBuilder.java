@@ -42,7 +42,7 @@ public class OBJBuilder
         {
             int i = in - 1;
 
-            this.content += "vt " + (((i % 16) + 0.5F) / 16) + " " + (((i / 16) + 0.5F) / 16) + "\n";
+            this.content += "vt " + (((i % 16) + 0.5F) / 16F) + " " + ((16 - ((i / 16) + 0.5F)) / 16F) + "\n";
         }
 
         this.content += "\n";
